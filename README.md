@@ -15,7 +15,7 @@ Should work for Python 3.6+.
 **Command**:
 
 ```bash
-python huecycle.py -i input.png -o output.gif
+python huecycle.py input.png output.gif
 ```
 
 **`output.gif`**:

@@ -17,14 +17,14 @@ class HueCycler:
       )
 
       self.parser.add_argument(
-         "-i", "--input",
-         metavar="PATH",
+         "input",
+         metavar="IN",
          type=Path,
          help="Path to the input PNG."
       )
       self.parser.add_argument(
-         "-o", "--output",
-         metavar="PATH",
+         "output",
+         metavar="OUT",
          type=Path,
          help="Path to the output GIF."
       )
@@ -54,7 +54,7 @@ class HueCycler:
       self.output_file = Path(self.args.output)
       self.period = self.args.period
       self.step = self.args.step
-      self.ms = math.ceil(self.step * self.period / 360)
+      self.ms = math.ceil(1000 * self.period * self.step / 360)
       self.num_frames = math.ceil(360 / self.step)
 
       self.input_image = Image.open(self.input_file).convert("RGBA")
